@@ -30,7 +30,7 @@ namespace MVC_Mail.Controllers
 
             //smtp
             SmtpClient smtp = new SmtpClient();
-            smtp.Credentials = new NetworkCredential("yzl3156yzl@gmail.com", "Yzl3156--");
+            smtp.Credentials = new NetworkCredential("yzl3156yzl@gmail.com", "YZL3156--");
             smtp.Port = 587; //Fix
             smtp.Host = "smtp.gamil.com"; //Fix -->Gmailin mail gönderme starndartı.
 
@@ -42,7 +42,7 @@ namespace MVC_Mail.Controllers
             catch (Exception ex)
             {
 
-                TempData["message"] = "Mail gönderilemedi. Hata nedeni: " + ex.Message;
+                TempData["error"] = "Mail gönderilemedi. Hata nedeni: " + ex.Message;
             }
 
 

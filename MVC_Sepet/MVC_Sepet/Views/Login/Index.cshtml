@@ -1,0 +1,63 @@
+﻿@model MVC_Sepet.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*Login Index*@
+<!DOCTYPE html>
+<html lang="en">
+<body class="sb-nav-fixed">
+
+    <div id="layoutSidenav ">
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"></li>
+                    </ol>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-body">
+                                        @if (TempData["error"] != null)
+                                        {
+                                            <div>
+                                                <h5 style="color:red">@TempData["error"]</h5>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                    <div>
+                                        <h5 style="color:red">@TempData["basarili"]</h5>
+                                        
+                                    </div>
+                                        }
+                                        <form method="post">
+
+                                            <div>
+                                                @Html.DisplayNameFor(x => x.Username)
+                                                @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+                                            </div>
+                                            <div>
+                                                @Html.DisplayNameFor(x => x.Password)
+                                                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-dark btn-block mt-3">Login</button>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+
